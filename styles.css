@@ -100,10 +100,6 @@ body{
   position:absolute;top:0;bottom:0;left:0;width:1px;
   background:var(--ink);opacity:0.25;
 }
-.heart{
-  position:relative;z-index:1;
-  font-size:20px;color:#93702E;line-height:1;
-}
 .names-col{
   display:flex;flex-direction:column;align-items:flex-start;gap:2px;
   margin-left:-10px;
@@ -285,7 +281,6 @@ table.cal td.mark::after{
   background:var(--accent);border:1px solid var(--accent);
   transition:background .2s ease,color .2s ease;
 }
-.map-link::after{content:"↗";font-size:12px;opacity:0.8;}
 .map-link:hover{background:transparent;color:var(--accent);}
 
 /* ═══ RSVP FORM ═══ */
