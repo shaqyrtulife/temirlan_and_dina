@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Тамерлан & Дина — Той</title>
+<meta name="theme-color" content="#FAF9F5">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="kk_KZ">
+<meta property="og:site_name" content="Тамерлан & Дина — Той">
+<meta property="og:title" content="Тамерлан & Дина — Той">
+<meta property="og:description" content="Сіздерді тойымызға шақырамыз. Той салтанаты 27 қараша 2026 жыл — арамыздан қалмаңыз!">
+<meta property="og:image" content="image_1.jpg">
+<meta property="og:image:alt" content="Тамерлан & Дина">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Тамерлан & Дина — Той">
+<meta name="twitter:description" content="Сіздерді тойымызға шақырамыз. Той салтанаты 27 қараша 2026 жыл — арамыздан қалмаңыз!">
+<meta name="twitter:image" content="image_1.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500;1,600&family=Great+Vibes&family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="page">
+
+<audio id="bg-music" loop preload="auto">
+  <source src="assets/music.mp3" type="audio/mpeg">
+</audio>
+<button class="music-toggle paused" id="music-toggle" title="Әуенді қосу">
+  <svg class="icon-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+  <div class="icon-pause"><span></span><span></span></div>
+</button>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <img class="hero-img" id="hero-img" alt="Тамерлан &amp; Дина" onerror="this.onerror=null;this.src='assets/hero.svg'" loading="eager">
+  <div class="hero-bokeh"></div>
+  <div class="sparkles" id="sparkles"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-bottom">
+    <div class="names-card">
+      <div class="date-col">
+        <span class="d-num" id="d-day"></span>
+        <span class="d-num" id="d-month"></span>
+        <span class="d-num" id="d-year"></span>
+      </div>
+      <div class="center-col">
+        <div class="vline"></div>
+        <span class="heart">♥</span>
+      </div>
+      <div class="names-col">
+        <span class="groom-name" id="groom-name"></span>
+        <span class="men">МЕН</span>
+        <span class="bride-name" id="bride-name"></span>
+      </div>
+    </div>
+    <div class="ornament">
+      <svg viewBox="0 0 200 28" fill="none" stroke="#C9A86A" stroke-width="0.8">
+        <path d="M30,14 Q65,2 100,14 Q135,26 170,14" opacity="0.6"/>
+        <path d="M50,14 Q75,6 100,14 Q125,22 150,14" opacity="0.4"/>
+        <circle cx="100" cy="14" r="2.5" fill="#C9A86A" stroke="none"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ INVITATION ═══ -->
+<section class="invite-section">
+  <div class="kicker">Құрметті қонақтар</div>
+  <div class="invite-names">
+    <span class="invite-name" id="invite-groom"></span>
+    <span class="invite-and">және</span>
+    <span class="invite-name" id="invite-bride"></span>
+  </div>
+  <p class="invite-say">Сіздерді сүйікті ұлымыз бен қызымыздың үйлену тойының салтанатты дастарханына қадірлі қонақ болуға шақырамыз.</p>
+</section>
+
+<!-- ═══ DATE & CALENDAR ═══ -->
+<section class="calendar-section reveal">
+  <div class="kicker">Той салтанаты</div>
+  <div class="cal-month" id="cal-month"></div>
+  <table class="cal">
+    <thead><tr><th>ДС</th><th>СС</th><th>СР</th><th>БС</th><th>ЖМ</th><th>СН</th><th>ЖС</th></tr></thead>
+    <tbody id="cal-body"></tbody>
+  </table>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ PROGRAM ═══ -->
+<section>
+  <div class="kicker kick-big">Той бағдарламасы</div>
+  <div class="timeline" id="program-list"></div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ VENUE ═══ -->
+<section class="venue-section">
+  <div class="kicker kick-big">Мекен-жайымыз</div>
+  <div class="reveal" id="venue-text">
+    <div class="venue-name" id="venue-name"></div>
+    <div class="venue-addr" id="venue-addr"></div>
+    <a class="map-link" id="map-link" href="#" target="_blank" rel="noopener">Картаны ашу</a>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ═══ RSVP ═══ -->
+<section class="rsvp-section">
+  <div class="kicker kick-big">Сауалнама</div>
+  <div class="rsvp-sub">Тойға қатысуыңызды растауыңызды сұраймыз</div>
+  <form id="rsvp-form" class="reveal">
+    <div class="field-label">Аты-жөніңіз</div>
+    <input type="text" id="rsvp-name" placeholder="Толық аты-жөніңіз" required>
+
+    <div class="field-label">Тойға келесіз бе?</div>
+    <div class="radio-group">
+      <label class="radio-row"><input type="radio" name="attend" value="Келемін" id="attend-yes"><span>Келемін</span></label>
+      <div class="guest-count" id="guest-count">
+        <span class="gc-label">Неше адам келесіздер?</span>
+        <select id="guest-select">
+          <option value="1">1 адам</option>
+          <option value="2">2 адам</option>
+          <option value="3">3 адам</option>
+          <option value="4">4 адам</option>
+          <option value="5">5 адам</option>
+          <option value="6">6+ адам</option>
+        </select>
+      </div>
+      <label class="radio-row"><input type="radio" name="attend" value="Жұбайыммен"><span>Жұбайыммен</span></label>
+      <label class="radio-row"><input type="radio" name="attend" value="Өкінішке орай, келе алмаймын"><span>Өкінішке орай, келе алмаймын</span></label>
+    </div>
+    <button type="submit" class="submit-btn" id="submit-btn" disabled>Жіберу</button>
+  </form>
+</section>
+
+<!-- ═══ CLOSING PHOTO + COUNTDOWN ═══ -->
+<div class="closing-photo">
+  <img class="closing-img" id="closing-img" onerror="this.onerror=null;this.src='assets/closing.svg'" alt="">
+  <div class="closing-shade"></div>
+  <div class="closing-overlay">
+    <div class="cd-title">Тойға дейін</div>
+    <div class="cd-row">
+      <div class="cd-pill" id="cd-days">00</div>
+      <div class="cd-pill" id="cd-hours">00</div>
+      <div class="cd-pill" id="cd-min">00</div>
+      <div class="cd-pill" id="cd-sec">00</div>
+    </div>
+    <div class="cd-labels">
+      <span>Күн</span><span>Сағат</span><span>Минут</span><span>Секунд</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ HOSTS ═══ -->
+<section class="hosts-section reveal">
+  <div class="hosts-title">Той иелері</div>
+  <div class="hosts-names" id="hosts-names"></div>
+</section>
+
+<!-- ═══ CLOSING MESSAGE ═══ -->
+<div class="closing-msg reveal">
+  <span>Қуанышымызға ортақ болыңыз</span>
+</div>
+
+</div><!-- .page -->
+
+<!-- ═══ SUCCESS MODAL ═══ -->
+<div class="success-message" id="success-message">
+  <div class="success-box">
+    <button type="button" class="success-close" id="success-close">&times;</button>
+    <div class="success-text">Рахмет!<br>Жауабыңыз қабылданды.</div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

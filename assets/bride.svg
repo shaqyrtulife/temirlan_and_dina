@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
+  <defs>
+    <radialGradient id="b" cx="0.5" cy="0.42" r="0.5">
+      <stop offset="0" stop-color="#efe6d2"/>
+      <stop offset="1" stop-color="#d8c6a0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="400" fill="#faf9f6"/>
+  <circle cx="200" cy="185" r="120" fill="url(#b)" opacity="0.7"/>
+  <circle cx="200" cy="185" r="120" fill="none" stroke="#c9a86a" stroke-width="1.5" opacity="0.5"/>
+  <text x="200" y="185" text-anchor="middle" dominant-baseline="middle" font-family="'Great Vibes',cursive" font-size="64" fill="#6b655a" opacity="0.9">Мерей</text>
+  <text x="200" y="345" text-anchor="middle" font-family="Georgia,serif" font-size="15" letter-spacing="2" fill="#c9a86a" opacity="0.7">bride.webp алмастырыңыз</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="600" viewBox="0 0 480 600">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#efece4"/>
+      <stop offset="1" stop-color="#ddd4c2"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="600" fill="url(#g)"/>
+  <rect x="60" y="80" width="360" height="300" rx="4" fill="#faf9f6" stroke="#c9a86a" stroke-width="2" opacity="0.8"/>
+  <path d="M90 380 L150 300 L210 360 L270 280 L330 340 L390 260 L390 380 Z" fill="#c9a86a" opacity="0.25"/>
+  <circle cx="240" cy="520" r="34" fill="none" stroke="#c9a86a" stroke-width="2" opacity="0.6"/>
+  <circle cx="190" cy="520" r="34" fill="none" stroke="#c9a86a" stroke-width="2" opacity="0.6"/>
+  <circle cx="290" cy="520" r="34" fill="none" stroke="#c9a86a" stroke-width="2" opacity="0.6"/>
+  <text x="240" y="500" text-anchor="middle" font-family="Georgia,serif" font-style="italic" font-size="24" fill="#6b655a" opacity="0.8">Тойхана залы</text>
+  <text x="240" y="575" text-anchor="middle" font-family="Georgia,serif" font-size="14" letter-spacing="2" fill="#c9a86a" opacity="0.7">venue.webp алмастырыңыз</text>
+</svg>
