@@ -34,17 +34,67 @@ body{
 /* ═══ MUSIC TOGGLE ═══ */
 .music-toggle{
   position:fixed;top:18px;right:18px;z-index:50;
-  width:38px;height:38px;border-radius:50%;
+  width:44px;height:44px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
-  cursor:pointer;background:rgba(250,249,245,0.85);
-  border:1px solid var(--line);padding:0;
-  backdrop-filter:blur(4px);
+  cursor:pointer;padding:0;
+  background:rgba(250,249,245,0.9);
+  border:1px solid rgba(201,168,106,0.5);
+  backdrop-filter:blur(6px);
+  box-shadow:0 6px 18px rgba(28,24,16,0.12);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,background .3s ease;
 }
-.music-toggle svg{width:13px;height:13px;fill:var(--ink);}
-.music-toggle .icon-pause{display:flex;gap:2.5px;}
-.music-toggle .icon-pause span{width:2.5px;height:11px;background:var(--ink);border-radius:0.5px;}
+.music-toggle::before{
+  content:"";position:absolute;inset:-7px;border-radius:50%;
+  border:1px solid rgba(201,168,106,0.45);
+  opacity:0;transform:scale(0.9);
+  transition:opacity .3s ease,transform .3s ease;
+}
+.music-toggle:not(.paused)::before{
+  opacity:1;transform:scale(1);
+  animation:musicPulse 2.4s ease-out infinite;
+}
+.music-toggle:not(.paused){
+  background:linear-gradient(135deg,#FFFDF8,#F4EBD9);
+  border-color:var(--accent);
+  box-shadow:0 6px 20px rgba(147,112,46,0.25);
+}
+.music-toggle:hover{
+  transform:scale(1.07);
+  box-shadow:0 8px 26px rgba(28,24,16,0.18);
+}
+.music-toggle:active{transform:scale(0.95);}
+
+.music-toggle svg{
+  width:15px;height:15px;fill:var(--accent);
+  transition:fill .25s ease,transform .25s ease;
+}
+.music-toggle:hover svg{fill:var(--ink);}
+.music-toggle.paused:hover svg{transform:rotate(180deg);}
+
+.music-toggle .icon-pause{display:flex;gap:3px;align-items:flex-end;height:14px;}
+.music-toggle .icon-pause span{
+  width:2.5px;height:9px;border-radius:1.5px;
+  background:var(--accent);
+  transform-origin:bottom;
+  transition:background .25s ease,height .25s ease;
+}
+.music-toggle .icon-pause span:nth-child(1){height:6px;}
+.music-toggle .icon-pause span:nth-child(2){height:13px;}
 .music-toggle.paused .icon-pause{display:none;}
 .music-toggle:not(.paused) .icon-play{display:none;}
+.music-toggle:not(.paused) .icon-pause span{animation:eqBounce .9s ease-in-out infinite;}
+.music-toggle:not(.paused) .icon-pause span:nth-child(1){animation-delay:.15s;}
+.music-toggle:not(.paused) .icon-pause span:nth-child(2){animation-delay:.35s;}
+
+@keyframes eqBounce{
+  0%,100%{transform:scaleY(0.55);}
+  50%{transform:scaleY(1.1);}
+}
+@keyframes musicPulse{
+  0%{opacity:0.55;transform:scale(0.92);}
+  70%{opacity:0;transform:scale(1.2);}
+  100%{opacity:0;transform:scale(1.2);}
+}
 
 /* ═══ HERO ═══ */
 .hero{
