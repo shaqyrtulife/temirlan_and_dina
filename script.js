@@ -11,8 +11,7 @@ var CONFIG = {
 
   program: [
     { time: '17:00', text: 'Қонақтардың жиналуы' },
-    { time: '18:00', text: 'Тойдың басталуы' },
-    { time: '23:00', text: 'Шығарып салу' }
+    { time: '18:00', text: 'Тойдың басталуы' }
   ],
 
   venueName: '«Zaman» мейрамханасы',
@@ -143,23 +142,30 @@ if(calSection1) calSection1.style.backgroundImage = "url('image_3.jpg')";
   var btn = $('music-toggle');
   if(!audio || !btn) return;
 
+  var started = false;
+
   function startMusic(){
+    started = true;
     audio.play().then(function(){ btn.classList.remove('paused'); }).catch(function(){});
   }
-  startMusic();
 
-  function onFirstInteraction(){
-    startMusic();
-    document.removeEventListener('touchstart', onFirstInteraction);
-    document.removeEventListener('click', onFirstInteraction);
+  function onFirstInteraction(e){
+    // Первое касание по самой кнопке игнорируем —
+    // её обрабатывает собственный click, иначе она сразу поставит паузу
+    if(!btn.contains(e.target) && audio.paused){
+      startMusic();
+    }
   }
   document.addEventListener('touchstart', onFirstInteraction, {once:true});
   document.addEventListener('click', onFirstInteraction, {once:true});
 
+  // Попытка автозапуска (в большинстве браузеров будет отклонена)
+  if(audio.paused){ startMusic(); }
+
   btn.addEventListener('click', function(e){
     e.stopPropagation();
     if(audio.paused){
-      audio.play().then(function(){ btn.classList.remove('paused'); }).catch(function(){});
+      startMusic();
     } else {
       audio.pause();
       btn.classList.add('paused');

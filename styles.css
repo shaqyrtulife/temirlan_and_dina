@@ -160,7 +160,7 @@ body{
 }
 .bride-name{margin-left:36px;}
 .men{
-  font-family:'Playfair Display',serif;font-size:18px;font-weight:600;
+  font-family:'Playfair Display',serif;font-size:32px;font-weight:600;
   letter-spacing:0.15em;text-transform:uppercase;
   color:var(--muted);margin:2px 0 2px 16px;
 }
@@ -168,6 +168,7 @@ body{
 /* ═══ ORNAMENT ═══ */
 .ornament{text-align:center;margin-top:8px;animation:slideUp 0.8s ease 0.5s both;}
 .ornament svg{width:230px;height:32px;}
+.rsvp-section .ornament{margin-top:26px;}
 
 @keyframes heroFade{from{opacity:0}to{opacity:1}}
 @keyframes slideUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
@@ -203,6 +204,15 @@ section .kicker.kick-big{
 }
 .invite-and{
   font-style:italic;font-size:16px;color:var(--muted);
+}
+/* СТЕК ұлымыз ТАМЕРЛАН / пен келініміз ДИНА */
+.invite-couple{
+  display:flex;flex-direction:column;align-items:center;gap:2px;
+  margin:20px 0 8px;
+}
+.invite-label{
+  font-family:'Fraunces',serif;font-style:italic;
+  font-size:16px;color:var(--muted);letter-spacing:0.02em;
 }
 .invite-say{
   font-family:'Fraunces',serif;font-style:italic;
@@ -408,14 +418,15 @@ input[type=text]:focus{outline:none;border-color:var(--ink);}
 
 /* ═══ HOSTS ═══ */
 .hosts-section{text-align:center;}
-.hosts-title{font-size:13.5px;color:var(--muted);margin-bottom:12px;}
 .hosts-names{font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:var(--ink);}
 
 /* ═══ CLOSING MSG ═══ */
-.closing-msg{text-align:center;padding:8px 24px 60px;}
+.closing-msg{text-align:center;padding:0 24px 64px;}
+.closing-msg .ornament{margin-bottom:16px;animation:none;}
 .closing-msg span{
-  font-family:'Fraunces',serif;font-style:italic;font-weight:400;
-  font-size:clamp(24px,7vw,30px);color:var(--ink);
+  font-family:'Fraunces',serif;font-style:italic;font-weight:500;
+  font-size:clamp(26px,8vw,34px);line-height:1.4;letter-spacing:0.01em;
+  color:var(--accent);
 }
 
 /* ═══ SUCCESS MODAL ═══ */
